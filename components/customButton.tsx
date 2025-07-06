@@ -1,4 +1,4 @@
-import { TouchableOpacity, Text } from "react-native";
+import { Text, TouchableOpacity } from "react-native";
 
 import { ButtonProps } from "@/types/type";
 
@@ -49,7 +49,7 @@ const CustomButton = ({
       {...props}
     >
       {IconLeft && <IconLeft />}
-      <Text className={`text-lg font-bold ${getTextVariantStyle(textVariant)}`}>
+      <Text className={`text-lg ml-2 font-bold ${getTextVariantStyle(textVariant)}`}>
         {title}
       </Text>
       {IconRight && <IconRight />}

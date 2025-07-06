@@ -1,7 +1,9 @@
+import { ClerkProvider } from '@clerk/clerk-expo';
+import { tokenCache } from '@clerk/clerk-expo/token-cache';
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
 import * as SplashScreen from "expo-splash-screen";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback } from "react";
 import { View } from "react-native";
 import "react-native-reanimated";
 import "./global.css";
@@ -31,7 +33,8 @@ export default function RootLayout() {
   }
 
   return (
-    <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
+    <ClerkProvider tokenCache={tokenCache}>
+      <View style={{ flex: 1 }} onLayout={onLayoutRootView}>
       <Stack>
         <Stack.Screen name="index" options={{ headerShown: false }} />
         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
@@ -39,5 +42,8 @@ export default function RootLayout() {
         <Stack.Screen name="+not-found" />
       </Stack>
     </View>
+    </ClerkProvider>
   );
 }
+
+
