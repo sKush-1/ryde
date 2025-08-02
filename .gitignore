@@ -38,8 +38,7 @@ yarn-error.*
 
 app-example
 
-# env files
-.env
+
 
 # IDE specific
 .idea
