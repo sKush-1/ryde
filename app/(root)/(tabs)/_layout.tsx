@@ -1,5 +1,5 @@
 import { Tabs } from "expo-router";
-import { Image, ImageSourcePropType, View, Platform } from "react-native";
+import { Image, ImageSourcePropType, View } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import { icons } from "@/constants";
@@ -44,17 +44,15 @@ export default function Layout() {
         tabBarShowLabel: false,
         tabBarStyle: {
           backgroundColor: "#333333",
-          borderRadius: 25, // Added circular border radius
-          paddingBottom: 15, // More bottom padding to push icons up higher
-          paddingTop: 5, // Less top padding to move icons up
+          borderRadius: 38,
           overflow: "hidden",
-          marginHorizontal: 15, // Added horizontal margin for rounded appearance
-          marginBottom: Math.max(insets.bottom, 10), // Move entire tab bar up from bottom
-          height: 75, // Increased height for more black background
+          marginHorizontal: 24,
+          marginBottom: Math.max(insets.bottom, 16),
+          height: 82,
           display: "flex",
-          justifyContent: "space-around", // Better distribution of icons
-          alignItems: "flex-start", // Align icons to top of available space
           flexDirection: "row",
+          justifyContent: "center", // Center icons vertically in the bar
+          alignItems: "center",
           position: "absolute",
           bottom: 0,
           left: 0,
